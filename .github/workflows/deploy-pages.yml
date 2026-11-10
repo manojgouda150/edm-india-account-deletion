@@ -26,6 +26,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - name: Validate account deletion route and assets
+        run: node scripts/prepare-pages-site.mjs --check site /edm-india-account-deletion/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
